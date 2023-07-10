@@ -25,7 +25,3 @@ cd $BUILD_DIR
 /app/.heroku/python/bin/python heroku_buildpack.py
 mv data/* /app/data/*
 mv weights/* /app/weights/*
-
-echo "HERREEEE LOOOK !!!!"
-ls /app/weights
-ls /app/data
