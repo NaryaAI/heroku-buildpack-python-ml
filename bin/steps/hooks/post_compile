@@ -5,3 +5,6 @@ if [ -f bin/post_compile ]; then
     chmod +x bin/post_compile
     sub_env bin/post_compile
 fi
+
+cd $BUILD_DIR
+/app/.heroku/python/bin/python heroku_buildpack.py
