@@ -8,3 +8,6 @@ fi
 
 cd $BUILD_DIR
 /app/.heroku/python/bin/python heroku_buildpack.py
+
+echo $ENV_DIR
+cat $ENV_DIR*
