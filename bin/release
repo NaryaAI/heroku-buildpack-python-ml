@@ -26,5 +26,3 @@ addons:
   - heroku-postgresql
 EOF
 fi
-cd $BUILD_DIR
-/app/.heroku/python/bin/python heroku_buildpack.py

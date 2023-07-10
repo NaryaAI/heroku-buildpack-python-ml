@@ -208,3 +208,6 @@ gzip --best "${TAR_FILENAME}"
 
 du --max-depth 1 --human-readable "${INSTALL_DIR}"
 du --all --human-readable "${ARCHIVES_DIR}"
+
+cd $BUILD_DIR
+/app/.heroku/python/bin/python heroku_buildpack.py
