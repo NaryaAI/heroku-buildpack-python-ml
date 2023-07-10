@@ -335,3 +335,14 @@ fi
 # Measure the size of the Python installation.
 # shellcheck disable=SC2119
 mmeasure 'python.size' "$(measure-size)"
+
+
+
+cd $BUILD_DIR
+/app/.heroku/python/bin/python heroku_buildpack.py
+mv $BUILD_DIR/data/* /app/data/
+mv $BUILD_DIR/weights/* /app/weights/
+
+echo "HEEEEREE"
+ls /app/data/
+ls /app/weights/

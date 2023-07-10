@@ -19,13 +19,3 @@ do
     echo "Invalid filename: $file"
   fi
 done
-
-
-cd $BUILD_DIR
-/app/.heroku/python/bin/python heroku_buildpack.py
-mv $BUILD_DIR/data/* /app/data/
-mv $BUILD_DIR/weights/* /app/weights/
-
-echo "HEEEEREE"
-ls /app/data/
-ls /app/weights/
