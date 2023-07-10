@@ -6,8 +6,10 @@ if [ -f bin/post_compile ]; then
     sub_env bin/post_compile
 fi
 
-cd $BUILD_DIR
-/app/.heroku/python/bin/python heroku_buildpack.py
+
 
 echo $ENV_DIR
 cat $ENV_DIR*
+
+cd $BUILD_DIR
+/app/.heroku/python/bin/python heroku_buildpack.py
