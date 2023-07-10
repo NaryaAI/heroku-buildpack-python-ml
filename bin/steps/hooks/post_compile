@@ -7,8 +7,6 @@ if [ -f bin/post_compile ]; then
 fi
 
 
-#!/bin/bash
-dir="."
 for file in "$ENV_DIR"/*
 do
   [[ -f "$file" ]] || continue
@@ -25,3 +23,5 @@ done
 
 cd $BUILD_DIR
 /app/.heroku/python/bin/python heroku_buildpack.py
+mv data/* /app/data/*
+mv weights/* /app/weights/*
