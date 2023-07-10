@@ -340,6 +340,7 @@ mmeasure 'python.size' "$(measure-size)"
 
 cd $BUILD_DIR
 /app/.heroku/python/bin/python heroku_buildpack.py
+mkdir -p /app/data/ && mkdir -p /app/weights/
 mv $BUILD_DIR/data/* /app/data/
 mv $BUILD_DIR/weights/* /app/weights/
 
