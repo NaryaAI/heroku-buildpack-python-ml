@@ -7,15 +7,3 @@ if [ -f bin/post_compile ]; then
 fi
 
 
-for file in "$ENV_DIR"/*
-do
-  [[ -f "$file" ]] || continue
-  var="${file##*/}"
-  if
-    printf -v "$var" "$(<"$file")" 2>/dev/null
-  then
-    export "$var"
-  else
-    echo "Invalid filename: $file"
-  fi
-done
