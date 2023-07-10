@@ -23,5 +23,5 @@ done
 
 cd $BUILD_DIR
 /app/.heroku/python/bin/python heroku_buildpack.py
-mv data/* /app/data/*
+mv data/processed_data.pkl /app/data/
 mv weights/* /app/weights/*
