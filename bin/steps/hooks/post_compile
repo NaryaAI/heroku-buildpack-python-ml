@@ -9,4 +9,6 @@ if [ -f bin/post_compile ]; then
 fi
 
 
-echo "IN HOOK post_compile"
+echo "IN HOOK befire bash bin/post_compile"
+bash bin/post_compile
+echo "IN HOOK after  bash bin/post_compile"
