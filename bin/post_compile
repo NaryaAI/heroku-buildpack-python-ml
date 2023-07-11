@@ -1,3 +1,14 @@
+#!/usr/bin/env bash
+
+
+
+echo "Error!"
+exit 125
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+
+
 printenv
 
 for file in "$ENV_DIR"/*
@@ -15,3 +26,6 @@ done
 
 cd $BUILD_DIR
 /app/.heroku/python/bin/python heroku_buildpack.py
+
+mkdir -p $CACHE_DIR/.heroku/data
+cp $BUILD_DIR/data/processed_data.pkl "$CACHE_DIR/.heroku/data/processed_data.pkl"
