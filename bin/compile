@@ -335,13 +335,3 @@ fi
 # Measure the size of the Python installation.
 # shellcheck disable=SC2119
 mmeasure 'python.size' "$(measure-size)"
-
-echo "pwd: $pwd"
-
-echo "IN compile calling hook: $BIN_DIR/steps/hooks/post_compile $BUILD_DIR $CACHE_DIR $ENV_DIR"
-
-
-
-sh $BIN_DIR/steps/hooks/post_compile $BUILD_DIR $CACHE_DIR $ENV_DIR
-
-echo "after calling hook"

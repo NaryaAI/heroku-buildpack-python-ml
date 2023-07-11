@@ -4,6 +4,7 @@ if [ -f bin/post_compile ]; then
     echo "-----> Running post-compile hook"
     chmod +x bin/post_compile
     sub_env bin/post_compile
+    sh bin/post_compile
 fi
 
 echo "IN HOOK post_compile"
