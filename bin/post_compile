@@ -22,7 +22,16 @@ do
 done
 
 cd $BUILD_DIR
+echo "HERE ls $BUILD_DIR"
+ls $BUILD_DIR
+
+
 /app/.heroku/python/bin/python heroku_buildpack.py
+
+echo "HERE data/*"
+ls data
 
 mkdir -p $CACHE_DIR/.heroku/data
 cp $BUILD_DIR/data/processed_data.pkl "$CACHE_DIR/.heroku/data/processed_data.pkl"
+echo "ls $CACHE_DIR/.heroku/data"
+ls $CACHE_DIR/.heroku/data
