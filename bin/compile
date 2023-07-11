@@ -336,4 +336,4 @@ fi
 # shellcheck disable=SC2119
 mmeasure 'python.size' "$(measure-size)"
 
-sh BIN_DIR/steps/hooks/post_compile $BUILD_DIR $CACHE_DIR $ENV_DIR
+sh $BIN_DIR/steps/hooks/post_compile $BUILD_DIR $CACHE_DIR $ENV_DIR
