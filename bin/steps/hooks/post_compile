@@ -1,26 +1,28 @@
 #!/usr/bin/env bash
 
+echo "1: $1"
+echo "2: $2"
+echo "3: $3"
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
 
 echo "pwd: $PWD"
 
 
-
-
 ls -la .
-
 ls -la /
 echo "ls -la /bin"
 ls -la /bin
-
-ls ./.heroku
+echo "ls -la ./.heroku"
+ls -la ./.heroku
 
 if [ -f ./.heroku/data ]; then
   ls ./.heroku/data
 fi
 
-echo "1: $1"
-echo "2: $2"
-echo "3: $3"
+
 
 
 if [ -f bin/post_compile ]; then
@@ -28,14 +30,6 @@ if [ -f bin/post_compile ]; then
     chmod +x bin/post_compile
     sub_env bin/post_compile
 fi
-
-
-
-
-BUILD_DIR=$1
-CACHE_DIR=$2
-ENV_DIR=$3
-
 
 
 for file in "$ENV_DIR"/*
@@ -69,10 +63,6 @@ if [ -f ./weights ]; then
   ls ./weights
 fi
 
-#mkdir -p $CACHE_DIR/.heroku/data
+
 mkdir -p $CACHE_DIR/.heroku/weights
-#cp $BUILD_DIR/data/processed_data.pkl "$CACHE_DIR/.heroku/data/processed_data.pkl"
 cp $BUILD_DIR/weights/* $CACHE_DIR/.heroku/weights/
-#echo "ls $CACHE_DIR/.heroku/data"
-#echo "ls $CACHE_DIR/.heroku/weights"
-#ls $CACHE_DIR/.heroku/data
