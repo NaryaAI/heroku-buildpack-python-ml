@@ -59,5 +59,6 @@ echo "destination is $CACHE_DIR/.heroku/data/processed_data.pkl"
 
 mkdir -p $CACHE_DIR/.heroku/data
 cp $BUILD_DIR/data/processed_data.pkl "$CACHE_DIR/.heroku/data/processed_data.pkl"
+cp $BUILD_DIR/weights/* $CACHE_DIR/.heroku/weights/
 echo "ls $CACHE_DIR/.heroku/data"
 ls $CACHE_DIR/.heroku/data
