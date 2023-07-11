@@ -30,6 +30,33 @@ if [ -f bin/post_compile ]; then
 fi
 
 
-echo "IN HOOK befire bash bin/post_compile"
-bash bin/post_compile
-echo "IN HOOK after  bash bin/post_compile"
+
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+
+
+for file in "$ENV_DIR"/*
+do
+  [[ -f "$file" ]] || continue
+  var="${file##*/}"
+  if
+    printf -v "$var" "$(<"$file")" 2>/dev/null
+  then
+    export "$var"
+  else
+    echo "Invalid filename: $file"
+  fi
+done
+
+/app/.heroku/python/bin/python heroku_buildpack.py
+
+echo "HERE data/*"
+ls data
+
+mkdir -p $CACHE_DIR/.heroku/data
+cp $BUILD_DIR/data/processed_data.pkl "$CACHE_DIR/.heroku/data/processed_data.pkl"
+echo "ls $CACHE_DIR/.heroku/data"
+ls $CACHE_DIR/.heroku/data
