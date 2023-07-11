@@ -315,9 +315,9 @@ cp "$ROOT_DIR/vendor/python.gunicorn.sh" "$GUNICORN_PROFILE_PATH"
 
 # Experimental post_compile hook. Don't remove this.
 # shellcheck source=bin/steps/hooks/post_compile
-echo "before source post_compile"
+#echo "before source post_compile"
 source "$BIN_DIR/steps/hooks/post_compile"
-echo "after source post_compile"
+#echo "after source post_compile"
 # Store new artifacts in the cache.
 rm -rf "$CACHE_DIR/.heroku/python"
 rm -rf "$CACHE_DIR/.heroku/python-version"
