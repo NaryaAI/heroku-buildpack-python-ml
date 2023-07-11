@@ -7,8 +7,16 @@ echo "pwd: $PWD"
 
 
 ls -la .
+
 ls -la /
-ls -la ../bin
+echo "ls -la /bin"
+ls -la /bin
+
+ls ./.heroku
+
+if [ -f ./.heroku/data ]; then
+  ls ./.heroku/data
+fi
 
 echo "1: $1"
 echo "2: $2"
@@ -19,8 +27,6 @@ if [ -f bin/post_compile ]; then
     echo "-----> Running post-compile hook"
     chmod +x bin/post_compile
     sub_env bin/post_compile
-    bash bin/post_compile
-    echo "IN HOOK in if "
 fi
 
 
