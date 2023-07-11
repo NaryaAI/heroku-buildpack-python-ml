@@ -8,9 +8,6 @@ BUILDPACK_DIR=$(cd "$(dirname "$(dirname "${BASH_SOURCE[0]}")")" && pwd)
 
 
 
-
-
-
 # Unfortunately the build system doesn't source the `export` script before
 # running `bin/release`, so we have to do so manually to ensure the buildpack
 # Python is used by `is_module_available` instead of system Python.
