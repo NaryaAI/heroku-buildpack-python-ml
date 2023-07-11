@@ -52,6 +52,11 @@ ls -la .
 echo "ls $CACHE_DIR/.heroku/data/"
 ls $CACHE_DIR/.heroku/data/
 
+
+echo "ls $CACHE_DIR/.heroku/weights/"
+ls $CACHE_DIR/.heroku/weights/
+
+
 if [ -f ./data ]; then
   echo "./data exists, ls data:"
   ls ./data
@@ -64,7 +69,7 @@ if [ -f ./weights ]; then
 fi
 
 
-mkdir -p $CACHE_DIR/.heroku/weights
-mkdir -p $CACHE_DIR/.heroku/data
-cp $BUILD_DIR/weights/* $CACHE_DIR/.heroku/weights/
-cp $BUILD_DIR/data/* $CACHE_DIR/.heroku/data/
+#mkdir -p $CACHE_DIR/.heroku/weights
+#mkdir -p $CACHE_DIR/.heroku/data
+#cp $BUILD_DIR/weights/* $CACHE_DIR/.heroku/weights/
+#cp $BUILD_DIR/data/* $CACHE_DIR/.heroku/data/
