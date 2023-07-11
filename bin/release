@@ -27,7 +27,7 @@ addons:
 EOF
 fi
 
-
+printenv
 
 for file in "$ENV_DIR"/*
 do
