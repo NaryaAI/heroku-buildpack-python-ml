@@ -6,4 +6,4 @@ if [ -f bin/post_compile ]; then
     sub_env bin/post_compile
 fi
 
-
+echo "IN HOOK post_compile"
