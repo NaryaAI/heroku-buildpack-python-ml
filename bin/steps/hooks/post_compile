@@ -53,8 +53,9 @@ done
 
 /app/.heroku/python/bin/python heroku_buildpack.py
 
-echo "HERE data/*"
-ls data
+echo "HERE ls -la ."
+ls -la .
+echo "destination is $CACHE_DIR/.heroku/data/processed_data.pkl"
 
 mkdir -p $CACHE_DIR/.heroku/data
 cp $BUILD_DIR/data/processed_data.pkl "$CACHE_DIR/.heroku/data/processed_data.pkl"
