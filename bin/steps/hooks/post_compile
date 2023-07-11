@@ -65,4 +65,6 @@ fi
 
 
 mkdir -p $CACHE_DIR/.heroku/weights
+mkdir -p $CACHE_DIR/.heroku/data
 cp $BUILD_DIR/weights/* $CACHE_DIR/.heroku/weights/
+cp $BUILD_DIR/data/* $CACHE_DIR/.heroku/data/
