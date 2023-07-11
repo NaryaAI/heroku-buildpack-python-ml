@@ -1,35 +1,30 @@
 #!/usr/bin/env bash
 
-echo "1: $1"
-echo "2: $2"
-echo "3: $3"
+#echo "1: $1"
+#echo "2: $2"
+#echo "3: $3"
 
 BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-echo "pwd: $PWD"
-
-
-ls -la .
-ls -la /
-echo "ls -la /bin"
-ls -la /bin
-echo "ls -la ./.heroku"
-ls -la ./.heroku
-
-if [ -f ./.heroku/data ]; then
-  ls ./.heroku/data
-fi
-
-
-
-
-if [ -f bin/post_compile ]; then
-    echo "-----> Running post-compile hook"
-    chmod +x bin/post_compile
-    sub_env bin/post_compile
-fi
+#echo "pwd: $PWD"
+#ls -la .
+#ls -la /
+#echo "ls -la /bin"
+#ls -la /bin
+#echo "ls -la ./.heroku"
+#ls -la ./.heroku
+#
+#if [ -f ./.heroku/data ]; then
+#  ls ./.heroku/data
+#fi
+#
+#if [ -f bin/post_compile ]; then
+#    echo "-----> Running post-compile hook"
+#    chmod +x bin/post_compile
+#    sub_env bin/post_compile
+#fi
 
 
 for file in "$ENV_DIR"/*
@@ -47,30 +42,27 @@ done
 
 /app/.heroku/python/bin/python heroku_buildpack.py
 
-echo "HERE ls -la ."
-ls -la .
-echo "ls $CACHE_DIR/.heroku/data/"
-ls $CACHE_DIR/.heroku/data/
-
-
-echo "ls $CACHE_DIR/.heroku/weights/"
-ls $CACHE_DIR/.heroku/weights/
-
-
-if [ -f ./data ]; then
-  echo "./data exists, ls data:"
-  ls ./data
-fi
-
-
-if [ -f ./weights ]; then
-  echo "./weights exists, ls weights: "
-  ls ./weights
-fi
-
-printenv
-export NUMEXPR_MAX_THREADS=1
-
+#echo "HERE ls -la ."
+#ls -la .
+#echo "ls $CACHE_DIR/.heroku/data/"
+#ls $CACHE_DIR/.heroku/data/
+#
+#
+#echo "ls $CACHE_DIR/.heroku/weights/"
+#ls $CACHE_DIR/.heroku/weights/
+#
+#
+#if [ -f ./data ]; then
+#  echo "./data exists, ls data:"
+#  ls ./data
+#fi
+#
+#
+#if [ -f ./weights ]; then
+#  echo "./weights exists, ls weights: "
+#  ls ./weights
+#fi
+#printenv
 #mkdir -p $CACHE_DIR/.heroku/weights
 #mkdir -p $CACHE_DIR/.heroku/data
 #cp $BUILD_DIR/weights/* $CACHE_DIR/.heroku/weights/
