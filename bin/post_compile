@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "ERROR!"
+exit 127
 
 
 BUILD_DIR=$1
