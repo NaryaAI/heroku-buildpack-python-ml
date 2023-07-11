@@ -68,6 +68,8 @@ if [ -f ./weights ]; then
   ls ./weights
 fi
 
+printenv
+export NUMEXPR_MAX_THREADS=1
 
 #mkdir -p $CACHE_DIR/.heroku/weights
 #mkdir -p $CACHE_DIR/.heroku/data
