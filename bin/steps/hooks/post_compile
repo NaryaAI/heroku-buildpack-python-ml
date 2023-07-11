@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+
+echo "pwd: $PWD"
+
+ls .
+ls ../
+ls ../../
+ls /
+ls ../../../
+
+
+
 if [ -f bin/post_compile ]; then
     echo "-----> Running post-compile hook"
     chmod +x bin/post_compile
