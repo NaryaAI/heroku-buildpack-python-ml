@@ -55,11 +55,26 @@ done
 
 echo "HERE ls -la ."
 ls -la .
-echo "destination is $CACHE_DIR/.heroku/data/processed_data.pkl"
+echo "ls $CACHE_DIR/.heroku/data/"
+ls $CACHE_DIR/.heroku/data/
+echo "ls $CACHE_DIR/.heroku/weights/"
+ls $CACHE_DIR/.heroku/weights/
 
-mkdir -p $CACHE_DIR/.heroku/data
-mkdir -p $CACHE_DIR/.heroku/weights
-cp $BUILD_DIR/data/processed_data.pkl "$CACHE_DIR/.heroku/data/processed_data.pkl"
-cp $BUILD_DIR/weights/* $CACHE_DIR/.heroku/weights/
-echo "ls $CACHE_DIR/.heroku/data"
-ls $CACHE_DIR/.heroku/data
+if [ -f ./data ]; then
+  echo "./data exists, ls data:"
+  ls ./data
+fi
+
+
+if [ -f ./weights ]; then
+  echo "./weights exists, ls weights: "
+  ls ./weights
+fi
+
+#mkdir -p $CACHE_DIR/.heroku/data
+#mkdir -p $CACHE_DIR/.heroku/weights
+#cp $BUILD_DIR/data/processed_data.pkl "$CACHE_DIR/.heroku/data/processed_data.pkl"
+#cp $BUILD_DIR/weights/* $CACHE_DIR/.heroku/weights/
+#echo "ls $CACHE_DIR/.heroku/data"
+#echo "ls $CACHE_DIR/.heroku/weights"
+#ls $CACHE_DIR/.heroku/data
