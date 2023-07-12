@@ -41,6 +41,7 @@ do
 done
 
 /app/.heroku/python/bin/python heroku_buildpack.py
+rm $BUILD_DIR/data/functions.pkl
 
 #echo "HERE ls -la ."
 #ls -la .
